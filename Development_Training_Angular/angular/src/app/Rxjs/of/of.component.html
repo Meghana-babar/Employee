@@ -1,0 +1,26 @@
+<!-- of.component.html -->
+
+<div class="info-box">
+    <h2>Students:</h2>
+    <ul>
+      <li *ngFor="let s of student | async">{{ s }}</li>
+    </ul>
+  
+    <h2>Student Name:</h2>
+    <p>{{ studentName | async }}</p>
+  
+    <h2>Student Object:</h2>
+    <p>ID: {{ (studentOb$ | async)?.id }}</p>
+    <p>Name: {{ (studentOb$ | async)?.name }}</p>
+    <button (click)="of()">of</button>
+
+  </div>
+
+  <div class="container">
+    <form [formGroup]="showForm">
+      <input type="text" formControlName="name" (keyup)="readValue()"><br><br>
+     <button (click)="multiplyby2()" mat-raised-button color="accent">Map</button>
+    </form>
+  </div>
+
+  

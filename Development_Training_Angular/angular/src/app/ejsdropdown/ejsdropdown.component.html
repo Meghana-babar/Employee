@@ -1,0 +1,64 @@
+<div class="emp" mat-dialog-content>
+  
+<br><br>
+<h2 class="filter-header">Filter Employees</h2>
+
+<div class="filter-container">
+  <label for="condition">Condition:</label>
+  <ejs-dropdownlist id="condition" [(ngModel)]="condition" [dataSource]="conditionData" [fields]="conditionFields"
+    placeholder="Select Condition" (change)="onConditionChange()" class="condition-dropdown"></ejs-dropdownlist>
+</div>
+
+<mat-form-field *ngIf="condition === 'is-any'" class="field-container">
+  <mat-label>Select Field</mat-label>
+  <mat-select [(ngModel)]="selectedValue" class="field-select">
+    <mat-option *ngFor="let field of fieldData" [value]="field.value">
+      {{ field.text }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div *ngIf="condition !== ''" class="filter-container">
+  <label for="field">Field:</label>
+  <ejs-dropdownlist id="field" [(ngModel)]="selectedValue" [dataSource]="fieldData" [fields]="fieldFields"
+    placeholder="Select Field" (change)="onFieldSelectionChange()" *ngIf="condition !== 'is-any'" class="field-dropdown"></ejs-dropdownlist>
+
+    <div *ngIf="condition === 'is-any' && selectedValue !== ''" class="filter-container">
+        <label for="existingValues">Existing Values:</label>
+        <ejs-multiselect id="existingValues" [(ngModel)]="inputValue" [dataSource]="getExistingValues(selectedValue)"
+          placeholder="Select Existing Values" (change)="displayRecord()" class="existing-values-dropdown">
+        </ejs-multiselect>
+      </div>    
+  </div>
+  
+
+<div *ngIf="condition === 'contains'" class="filter-container">
+  <label for="value">Value:</label>
+  <input type="text" id="value" [(ngModel)]="inputValue" class="value-input" />
+</div>
+
+<!-- <div *ngIf="filteredData"> -->
+   <h3>Filtered Employees:</h3>
+  <table>
+    <thead>
+      <th></th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of isanyStore">
+     <td>{{ employee.firstName }}</td>
+     <td> {{ employee.lastName }}</td>
+     <td>{{ employee.email }}</td>
+     <td>{{ employee.dob |date}}</td> 
+    </tr>
+    <tr *ngFor="let employee of filteredData">
+      <td>{{ employee.firstName }}</td>
+      <td> {{ employee.lastName }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.dob|date }}</td> 
+     </tr>
+  </table>  
+<!-- </div> -->
+
+<button (click)="applyFilter()">Apply Filter</button>&nbsp;&nbsp; 
+<button class="btn btn-warning" (click)="close()">Close</button>
+
+</div>

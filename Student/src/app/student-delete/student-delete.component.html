@@ -1,0 +1,73 @@
+<!--<div class="container">
+    <mat-dialog-actions>
+      <button mat-raised-button (click)="OnClick()" >
+        Enter Student Details
+      </button>
+    </mat-dialog-actions>-->
+<nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid">
+    <h2 class="text-light primary py-3">STUDENT MANAGEMENT </h2>
+
+    <div class="d-flex">
+      <button class="btn btn-success" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+        (click)="OnClick()">Add Student</button>&nbsp;
+        <button (click)="applyFilter()">Apply Filter</button>
+
+        <!--filter popup-->
+        <div class="filter-popup" *ngIf="columns.length > 0">
+          <select [(ngModel)]="filterColumn">
+            <option value="">Select Column</option>
+            <option *ngFor="let column of columns" [value]="column">{{ column }}</option>
+          </select>
+          <select [(ngModel)]="filterCondition">
+            <option value="is">Is</option>
+            <option value="is-any">Is Any</option>
+            <option value="contains">Contains</option>
+          </select>
+          <input type="text" [(ngModel)]="filterValue" *ngIf="filterCondition !== 'is-any'">
+          <select multiple [(ngModel)]="filterValues" *ngIf="filterCondition === 'is-any'">
+            <option *ngFor="let value of " [value]="value">{{ value }}</option>
+          </select>
+          <button (click)="applyFilter()">Apply</button>
+        </div>
+
+      <button class="btn btn-warning" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Mobile No</th>
+      <th>course</th>
+      <th>
+        Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stud of Service.studentList">
+      <td>{{stud.name}}</td>
+      <td>{{stud.lastName}}</td>
+      <td>{{stud.email}}</td>
+      <td>{{stud.age}}</td>
+      <td>{{stud.mobileNo}}</td>
+      <td>{{stud.course}}</td>
+      <td>
+        <a class="btn btn-info" (click)="OnEdit(stud)">{{actionBtn}}</a>
+        <button class="btn btn-danger" (click)="OnDelete(stud.studentID)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+<router-outlet></router-outlet>

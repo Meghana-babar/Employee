@@ -1,0 +1,59 @@
+<form #myForm="ngForm" (ngSubmit)="add(myForm.value)">
+    <div>
+    <mat-form-field>
+        <mat-label>Input</mat-label>
+        <input matInput [(ngModel)]="firstname"  name="firstname" firstname="ngModel" minlength="10" required>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-label>Lastname</mat-label>
+        <input matInput [(ngModel)]="lastname" lastname="ngModel" name="lastname" required>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-label>Phone Number</mat-label>
+        <input matInput [(ngModel)]="phonenumber"  phonenumber="ngModel" name="phonenumber" minlength="10">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="email"  email="ngModel"name="email" required="">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-label>Branch</mat-label>
+        <mat-select [(ngModel)]="selectedValue"  selectedValue="ngModel" name="selectedValue">
+          <mat-option value="1">Cs</mat-option>
+          <mat-option value="2">It</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput [(ngModel)]="address" address="ngModel" name="address">
+      </mat-form-field>
+      <br>
+
+      <section>
+        <div class="example-label">submit</div>
+        <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="submitpost()">Submit</button>
+
+          <!-- <button mat-raised-button color="primary" [disabled]="myForm.valid">Submit</button> -->
+        </div>
+      </section>
+
+            <div class="example-label">reset form</div>
+            <div class="example-button-row">
+              <button mat-raised-button color="accent" (click)="reset(myForm)">Reset Form</button>
+
+              <div class="example-button-row">
+                <button mat-raised-button color="accent" (click)="setForm(myForm)">Set Form</button>
+            </div>
+            </div>
+        </div>
+</form>

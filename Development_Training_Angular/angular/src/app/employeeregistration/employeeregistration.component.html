@@ -1,0 +1,80 @@
+<form [formGroup]="employeeForm">
+    <mat-form-field>
+      <input matInput placeholder="First Name" formControlName="firstName">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput placeholder="Last Name" formControlName="lastName">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput [matDatepicker]="dobPicker" placeholder="Date of Birth" formControlName="dob">
+      <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+      <mat-datepicker #dobPicker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option value="male">Male</mat-option>
+        <mat-option value="female">Female</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput placeholder="Designation" formControlName="designation">
+    </mat-form-field>
+  
+    <div formArrayName="experiences">
+      <div *ngFor="let experience of experiences.controls; let i = index" [formGroupName]="i">
+        <h3>Experience {{ i + 1 }}</h3>
+  
+        <mat-form-field>
+          <input matInput placeholder="Company Name" formControlName="companyName">
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput [matDatepicker]="startDatePicker" placeholder="Start Date" formControlName="startDate">
+          <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #startDatePicker></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput [matDatepicker]="endDatePicker" placeholder="End Date" formControlName="endDate">
+          <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #endDatePicker></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Role" formControlName="role">
+        </mat-form-field>
+  
+        <button mat-raised-button color="warn" (click)="deleteExperience(i)">Delete Experience</button>
+      </div>
+  
+      <button mat-raised-button color="primary" (click)="addExperience()">Add Experience</button>
+    </div>
+  
+    <div formGroupName="family">
+      <h3>Family</h3>
+  
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Relationship" formControlName="relationship">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Age" formControlName="age">
+      </mat-form-field>
+    </div>
+  
+    <button mat-raised-button color="primary" (click)="submitForm()">Submit</button>
+  </form>
+  

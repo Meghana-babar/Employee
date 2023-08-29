@@ -1,0 +1,21 @@
+<!-- <ejs-accumulationchart [title]="title" [legendSettings]="legend" [tooltip]="tooltip">
+    <e-accumulation-series-collection>
+        <e-accumulation-series type="Pie" [dataSource]="Datachart" xName="male" yName="female">
+
+        </e-accumulation-series>
+    </e-accumulation-series-collection>
+</ejs-accumulationchart>
+ -->
+
+
+ <ejs-accumulationchart id="pieChart" [title]="title" [legendSettings]="legend" [tooltip]="tooltip">
+    <e-accumulation-series-collection>
+      <e-accumulation-series [dataSource]="data" type="Pie" xName="x" yName="y">
+      </e-accumulation-series>
+    </e-accumulation-series-collection>
+  </ejs-accumulationchart>
+  
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="goBack()">Go Back</button>
+  </div>
+  

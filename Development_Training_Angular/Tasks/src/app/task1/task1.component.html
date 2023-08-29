@@ -1,0 +1,27 @@
+<form #Sform="ngForm" (ngSubmit)="submit()">
+    <label>name</label>
+    <input type="text" id="name" name="name" [(ngModel)]="leaveData.name"><br>
+    <label>StartDate</label>
+    <input type="date" id="sdate" name="sdate" [(ngModel)]="leaveData.sdate">
+    <label>EndDate</label>
+    <input type="date" id="edate" name="edate" [(ngModel)]="leaveData.edate">
+    <label>Reason</label>
+    <input type="text" id="reason" name="reason" [(ngModel)]="leaveData.reason">
+    <button>submit</button>
+</form>
+<table>
+    <tr>
+    <th>name</th>
+    <th>StartDate</th>
+    <th>EndDate</th>
+    <th>Reason</th>
+    <th></th>
+    </tr>
+    <tr *ngFor="let a of savedata">
+      <td>{{a.name}}</td>
+      <td>{{a.startdate}}</td>
+      <td>{{a.enddate}}</td>
+      <td>{{a.reason}}</td>
+      <td><button (click)="edit(a)">edit</button></td>
+    </tr>
+</table>

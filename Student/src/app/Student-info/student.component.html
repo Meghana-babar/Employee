@@ -1,0 +1,62 @@
+
+<form #myForm="ngForm"  (ngSubmit)="myForm.form.valid &&  submit(myForm)" >
+<div class="container">
+     <mat-dialog-content>
+        <header>
+            <h1>Student Details</h1>
+        </header>
+    </mat-dialog-content>
+    <p>
+       
+        
+    <p>
+        <input type="hidden" name="studentID"  [value]="Service.getStudent.studentID" #studentID="ngModel" [(ngModel)]="Service.getStudent.studentID">
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input  matInput placeholder=" Name" name="name" #name="ngModel" [(ngModel)]="Service.getStudent.name" required>
+        </mat-form-field>
+        <mat-error> <span *ngIf="myForm.controls['name']?.['errors']?.['required'] && myForm.controls['name']?.['touched']" >Enter Name</span> </mat-error>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input  matInput placeholder=" Last Name" name="lname" #lname="ngModel" [(ngModel)]="Service.getStudent.lastName" required>
+        </mat-form-field>
+        <mat-error> <span *ngIf="myForm.controls['lname']?.['errors']?.['required'] && myForm.controls['salary']?.['touched']" >Last name</span> </mat-error>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input  matInput placeholder="Employee email" name="email" #email="ngModel" [(ngModel)]="Service.getStudent.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        </mat-form-field>
+        <mat-error> <span *ngIf="myForm.controls['email']?.['errors']?.['required'] && myForm.controls['email']?.['touched']" >Enter Email</span> </mat-error>
+    </p>
+    
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Mobile No</mat-label>
+            <input  matInput placeholder="Mobile no" name="mobileno" #mobileno="ngModel" [(ngModel)]="Service.getStudent.mobileNo" required >
+        </mat-form-field>
+        <mat-error> <span *ngIf="myForm.controls['mbno']?.['errors']?.['required'] && myForm.controls['email']?.['touched']" >Enter Mobile No</span> </mat-error>
+    </p>
+    <p>
+        <mat-form-field appearance="outline" >
+            <mat-label>Select Course</mat-label>
+           <mat-select name="deptID" #deptID="ngModel" [(ngModel)]="Service.getStudent.deptId"   required>
+            <mat-option value="0">-Select-</mat-option>
+            <mat-option value="1">IT</mat-option>
+            <mat-option value="2">CS</mat-option>
+            <mat-option value="3">MECH</mat-option>  
+        </mat-select>
+        </mat-form-field>
+        <mat-error> <span *ngIf="myForm.controls['department']?.['errors']?.['required'] && myForm.controls['department']?.['touched']" >Select Course</span> </mat-error>
+    </p>
+    <p>
+        <mat-dialog-actions align="end">
+            <button mat-raised-button color="primary" type="submit" [disabled]="deptID.value==0"  >{{actionBtn}}</button>&nbsp;
+            <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+        </mat-dialog-actions>
+    </p> 
+ </div> 
+
+</form>

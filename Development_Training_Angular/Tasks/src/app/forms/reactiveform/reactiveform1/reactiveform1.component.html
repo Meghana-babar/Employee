@@ -1,0 +1,45 @@
+
+<form [formGroup]="reactive" (ngSubmit)="submit()">
+    <div>
+    <label>First Name:</label>
+    <input type="text" formControlName="firstname"><br>
+   
+    <label>Last Name:</label>
+    <input type="text" formControlName="lastname"><br>
+    
+    <label>Email:</label>
+    <input type="email" formControlName="email"><br>
+    
+    <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br>
+
+           <label>Department</label> 
+    <select>
+        <option>CS</option>
+        <option>IT</option>
+        <option>MECH</option>
+    </select><br></div>
+
+     <div formArrayName="hobbies">
+            <div *ngFor="let control of reactive.get('hobbies')['controls'];index as i">
+        <input type=" text" placeholder="add hobbies" [formControlName]=i >
+            <button (click)="addskil()">Add Hobbies</button>
+    </div>
+</div> 
+
+<form formGroupName="reactiveinnner">
+    <input type="text" formControlName="brothername"><br>
+    <input type="text" formControlName="sistername">
+<button (click)="send()">send</button>
+</form>
+
+    <button type="submit">Submit</button>
+    <button type="submit" (click)="edit()">edit</button>
+    
+    
+</form>

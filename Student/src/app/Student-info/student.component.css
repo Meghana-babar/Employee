@@ -1,0 +1,8 @@
+.container{
+    align-items: center;
+    text-align: center;
+    
+}
+mat-form-field{
+    width: 50%;
+}

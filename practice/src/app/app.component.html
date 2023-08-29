@@ -1,0 +1,58 @@
+<!--<h1>{{title}}</h1>
+<h1 *ngFor="let user of users">
+  {{user.name}},
+  {{user.email}}
+</h1>-->
+
+<ul *ngFor="let user of users">
+  <li>{{user.name}}</li>
+  <li>{{user.email}}</li>
+<ul *ngFor="let account of user.accounts">
+  <li>{{account}}</li>
+</ul>
+</ul>
+
+
+<app-loops></app-loops>
+<app-toggle></app-toggle>
+<app-todo-list></app-todo-list>
+<br/><br/>
+<button (click)="updatechild()">update child component</button>
+
+<app-child [item]="data"></app-child>
+
+<ul *ngFor="let user of userdetails">
+  <app-userdetails [item1]="user"></app-userdetails>
+</ul>
+
+<app-childtoparent (myevent)="updatedata($event)"></app-childtoparent><br>
+
+<input type="text" [(ngModel)]="name">
+<h1>{{name}}</h1>
+
+<app-templatereferencevariable></app-templatereferencevariable>
+<div>
+<h1>pipes:{{20|pipes}}</h1>
+<h2>currency pipe:{{13|currency :'INR'}}</h2>
+<h2>currency pipe:{{13|currency :'USD'}}</h2>
+
+<h2>date pipe:{{date|date}}</h2>
+<h2>uppercasepip:{{"meghana"|uppercase}}</h2>
+<h2>lowercase:{{"babar"|lowercase}}</h2>
+
+</div>
+
+<ul>
+  <li *ngFor="let d of memberData">
+    {{d.name1}}
+  </li>
+</ul>
+
+
+
+
+<app-footer></app-footer><br><br>
+<app-home></app-home>
+<app-about></app-about>
+
+<input type="text" (blur)="handleData($event)">

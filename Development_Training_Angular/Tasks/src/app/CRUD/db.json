@@ -1,0 +1,105 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "pname": "dcf",
+      "desc": "fdv",
+      "price": "fv",
+      "id": 2
+    },
+    {
+      "pname": "dcf",
+      "desc": "fdv",
+      "price": "fv",
+      "id": 3
+    },
+    {
+      "pname": "iphone",
+      "desc": "bd",
+      "price": "123",
+      "id": 4
+    },
+    {
+      "pname": "",
+      "desc": "",
+      "price": "",
+      "id": 5
+    },
+    {
+      "pname": "c",
+      "desc": "z",
+      "price": "zx",
+      "id": 6
+    },
+    {
+      "pname": "",
+      "desc": "",
+      "price": "",
+      "id": 7
+    },
+    {
+      "pname": "",
+      "desc": "",
+      "price": "",
+      "id": 8
+    },
+    {
+      "pname": "",
+      "desc": "",
+      "price": "",
+      "id": 9
+    },
+    {
+      "pname": "bgfd",
+      "desc": "df",
+      "price": "df",
+      "id": 10
+    }
+  ],
+  "student": [
+    {
+      "sname": "mfvn",
+      "age": "23",
+      "branch": "dc",
+      "id": 1
+    },
+    {
+      "sname": "ffd",
+      "age": "2",
+      "branch": "fv ",
+      "id": 2
+    },
+    {
+      "sname": "",
+      "age": "",
+      "branch": "",
+      "id": 3
+    },
+    {
+      "sname": "",
+      "age": "",
+      "branch": "",
+      "id": 4
+    },
+    {
+      "sname": "",
+      "age": "",
+      "branch": "",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

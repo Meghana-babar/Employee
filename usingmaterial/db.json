@@ -1,0 +1,130 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employee": [
+    {
+      "firstName": "mehan",
+      "lastName": "babar",
+      "email": "bv@gmail.com",
+      "dob": "2023-04-10T18:30:00.000Z",
+      "gender": "female",
+      "education": "Graduate",
+      "company": "quixy",
+      "experience": 2,
+      "package": 4,
+      "id": 1
+    },
+    {
+      "firstName": "pavan",
+      "lastName": "sai",
+      "email": "pvn@gmail.com",
+      "dob": "2023-04-20T18:30:00.000Z",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "wipro",
+      "experience": 3,
+      "package": 7,
+      "id": 2
+    },
+    {
+      "firstName": "chai",
+      "lastName": "babar",
+      "email": "chai@gmail.com",
+      "dob": "2023-04-10T18:30:00.000Z",
+      "gender": "female",
+      "education": "Graduate",
+      "company": "valtech",
+      "experience": 4,
+      "package": 11,
+      "id": 3
+    },
+    {
+      "firstName": "arun",
+      "lastName": "babar",
+      "email": "arunbabar83@gmail.com",
+      "dob": "2023-04-09T18:30:00.000Z",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "google",
+      "experience": 2,
+      "package": 4,
+      "id": 4
+    },
+    {
+      "firstName": "salma",
+      "lastName": "ma",
+      "email": "sal@gmail.com",
+      "dob": "2023-04-11T18:30:00.000Z",
+      "gender": "female",
+      "education": "Intermediate",
+      "company": "terrologic",
+      "experience": 2,
+      "package": 3,
+      "id": 5
+    },
+    {
+      "firstName": "janardhan",
+      "lastName": "ghf",
+      "email": "bv@gmail.com",
+      "dob": "2023-02-14T18:30:00.000Z",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "quixy",
+      "experience": 3,
+      "package": 5,
+      "id": 7
+    },
+    {
+      "firstName": "cbd ",
+      "lastName": "bv bd",
+      "email": "dvb@gmail.com",
+      "dob": "2023-04-10T18:30:00.000Z",
+      "gender": "others",
+      "education": "Post Graduate",
+      "company": "dvv",
+      "experience": 1,
+      "package": -6,
+      "id": 8
+    },
+    {
+      "firstName": "xxjhgjh",
+      "lastName": "hbjh",
+      "email": "dvb@gmail.com",
+      "dob": "2023-04-03T18:30:00.000Z",
+      "gender": "female",
+      "education": "Post Graduate",
+      "company": "dvv",
+      "experience": 20,
+      "package": 4,
+      "id": 9
+    },
+    {
+      "firstName": "heena",
+      "lastName": "coee",
+      "email": "wes@gmail.com",
+      "dob": "2023-04-09T18:30:00.000Z",
+      "gender": "male",
+      "education": "Post Graduate",
+      "company": "sc",
+      "experience": 4,
+      "package": 5,
+      "id": 10
+    }
+  ],
+  "signupusers":[]
+}

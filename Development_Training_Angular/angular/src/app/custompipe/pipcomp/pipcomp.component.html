@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>dob</th>
+        <th>birthyear</th>
+    </thead>
+    <tbody >
+        <tr *ngFor="let use of user">
+            <td>{{use.id}}</td>
+            <td>{{use.name}}</td>
+            <td>{{use.dob }}</td>
+            <td>{{use.dob |cpipe}}</td>
+        </tr>
+    </tbody>
+</table>

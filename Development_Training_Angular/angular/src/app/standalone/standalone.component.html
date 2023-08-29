@@ -1,0 +1,25 @@
+<div class="container">
+<button mat-stroked-button color="accent" (click)="submt()">Standalone</button>
+<button mat-stroked-button color="accent" (click)="getdata()">{{displaydata?'close getuser':'getuser'}}</button>
+<div *ngIf="displaydata">
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Address</th>
+    </tr>
+    <tr *ngFor="let dis of displayColumn">
+    <td>{{dis.id}}</td>
+    <td>{{dis.name}}</td>
+    <td>{{dis.username}}</td>
+    <td>{{dis.email}}</td>
+    <td>{{dis.address}}</td>
+    </tr>
+</table>
+</div>
+</div>
+
+
+<div class="container">{{pipemsg|uppercase}}</div>

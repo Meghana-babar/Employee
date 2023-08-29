@@ -1,0 +1,6 @@
+<div class="container">
+    <p [style]="'color:red'">Currentdate is:{{ currentdate | date : "mm/dd/yyyy"}}</p>
+    <p>Currency pipe:{{price|currency}}</p>
+    <p>Uppercase pipe{{name |lowercase}}</p>
+    <p *ngFor="let i of arr">{{i |uppercase}}</p>
+</div>

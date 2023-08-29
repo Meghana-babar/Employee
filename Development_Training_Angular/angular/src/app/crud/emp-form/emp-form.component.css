@@ -1,0 +1,25 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.main-body{
+  max-width: 1248px;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+mat-form-field{
+  width: 50%;
+}
+
+.custom-button {
+margin-right: 30px;
+color: white;
+background-color: blue;
+}
+.dialog-content {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-left: auto
+}
+

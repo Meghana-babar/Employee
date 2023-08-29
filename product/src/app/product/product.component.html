@@ -1,0 +1,20 @@
+<h1>Product Management</h1>
+
+<form [formGroup]="productForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Product Name</mat-label>
+    <input matInput formControlName="name" required>
+    <mat-error *ngIf="productForm.controls['name'].invalid && (productForm.controls['name'].touched || productForm.controls['name'].dirty)">
+      Product name is required.
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Add other form fields as needed -->
+
+  <button mat-raised-button color="primary" (click)="addProduct()" [disabled]="productForm.invalid">Add</button>
+  <button mat-raised-button color="primary" (click)="updateProduct()" [disabled]="productForm.invalid || !selectedProductId">Update</button>
+</form>
+
+<table mat-table [dataSource]="products">
+  <!-- Define table columns -->
+</table>

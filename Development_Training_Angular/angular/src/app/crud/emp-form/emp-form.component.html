@@ -1,0 +1,214 @@
+
+<br><br><br><mat-toolbar color="primary">
+    <span>Crud Application</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button (click)="openAddEditEmpForm()">
+      Add Employee
+    </button>
+    <button mat-raised-button (click)="openFilterEmpForm()">
+      Filter
+    </button>
+    <button mat-raised-button (click)="chartopen()">
+      Chart
+    </button>
+    <button class="btn btn-warning" (click)="logout()">Logout</button>
+  </mat-toolbar>
+
+
+  <!--<button class="marg" mat-raised-button color="primary" class="marg custom-button" style="margin-right: 30px;" (click)="toggleFilter()">Add
+    Filter</button>-->
+ <!--<button class="marg" mat-raised-button color="primary" style="margin-right: 30px;" (click)="getAll()"
+    [hidden]="getAllhide">GetAll</button>
+  <br><br>
+  <div [hidden]="hideField">
+    <nav>
+      <mat-form-field>
+        <mat-label>Select a Column</mat-label>
+        <mat-select [(ngModel)]="isEmpty" (selectionChange)="IsSelectOperater()">
+          <mat-option *ngFor="let item of displayedColumns" [value]="item">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>&nbsp;&nbsp;
+      <mat-form-field [hidden]=isHide>
+        <mat-label>Select an option</mat-label>
+        <mat-select [(ngModel)]="searchItem">
+          <mat-option *ngFor="let item of empNamerender" [value]="item">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      &nbsp;&nbsp; <button mat-raised-button color="accent" (click)=" SearchItems()">Apply</button>
+    </nav>
+  </div>-->
+
+  <div class="main-body">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter2($event)" placeholder="Ex. Message" #input>
+    </mat-form-field>
+  
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="select column" [(ngModel)]="setColumn" (selectionChange)="Optionselect()">
+          <mat-option *ngFor="let col of displayedColumns" [value]="col">{{col}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+      <mat-form-field *ngIf="setColumn" >
+        <mat-select placeholder="select condition" [(ngModel)]="thecondition1">
+          <mat-option *ngFor="let con of theConditions" [value]="con">{{con}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+      <mat-form-field *ngIf="thecondition1 && thecondition1!=='Starts with' && thecondition1!=='Ends with' && thecondition1!=='contains' &&thecondition1!=='Not Contains' &&thecondition1!=='is-Any' ">
+        <mat-select placeholder="select value" [(ngModel)]="setvalue" (selectionChange)="filterselectedDetails()">
+          <mat-option *ngFor="let op of renderinf" [value]="op">{{op}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field *ngIf=" thecondition1=='Starts with' || thecondition1==='Ends with' || thecondition1==='contains' || thecondition1==='Not Contains'">
+        <input type="text" placeholder="enter value" matInput [(ngModel)]="setvalue" (input)="filterselectedDetails()">
+      </mat-form-field>
+<div *ngIf="thecondition1=='is-Any'">
+  <mat-form-field >
+    <mat-label>Select Values</mat-label>
+    <mat-select [(ngModel)]="setvalue" multiple>
+      <mat-option *ngFor="let value of renderinf" [value]="value">{{ value }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="apply()">Apply</button>
+</div>
+   
+    </div>
+
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+  
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="dob">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Dob </th>
+          <td mat-cell *matCellDef="let row"> {{row.dob | date : 'mm-dd-yyyy'}} </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
+          <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="education">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Education </th>
+          <td mat-cell *matCellDef="let row"> {{row.education}} </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="company">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
+          <td mat-cell *matCellDef="let row"> {{row.company}} </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="experience">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Experience </th>
+          <td mat-cell *matCellDef="let row"> {{row.experience}} </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="package">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Package </th>
+          <td mat-cell *matCellDef="let row"> {{row.package | currency:'INR'}}L </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button color="primary" (click)="openEditForm(row)">
+              <mat-icon>edit</mat-icon>
+            </button>
+  
+            <button mat-icon-button color="warn" (click)="deleteEmployee(row.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[2,5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+  </div>
+
+
+  <!--filter-->
+<div class="main-body">
+  <!-- Existing code... -->
+
+  <!-- <div class="filter-container">
+    <mat-form-field>
+      <mat-label>Condition</mat-label>
+      <mat-select [(ngModel)]="condition" (selectionChange)="onConditionChange()">
+        <mat-option value="">Select Condition</mat-option>
+        <mat-option value="is-any">Is Any</mat-option>
+        <mat-option value="contains">Contains</mat-option>
+        <mat-option value="Not-contains">Not Contains</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Column</mat-label>
+      <mat-select [(ngModel)]="selectedColumn" (selectionChange)="onColumnChange()">
+        <mat-option value="">Select Column</mat-option>
+        <mat-option *ngFor="let column of fieldData" [value]="column.value">{{ column.text }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="condition === 'contains'">
+      <input matInput [(ngModel)]="filterValue" placeholder="Enter Value">
+    </mat-form-field> -->
+    
+
+    <!-- <mat-form-field *ngIf="condition === 'is-any' && selectedColumn">
+      <mat-label>Select Values</mat-label>
+      <mat-select [(ngModel)]="selectedColumnValues" multiple>
+        <mat-option *ngFor="let value of existingColumnValues" [value]="value">{{ value }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <ng-container *ngIf="condition === 'not-contains'">
+      <mat-form-field>
+        <mat-label>Enter value to exclude</mat-label>
+        <input matInput [(ngModel)]="filterValue" (ngModelChange)="applyFilter()" placeholder="Value">
+      </mat-form-field>
+    </ng-container>
+    
+
+    <button mat-raised-button color="primary" (click)="applyFilter()">Apply Filter</button>
+  </div> -->
+
+</div>
+
+<!--ejs-filter-->
+

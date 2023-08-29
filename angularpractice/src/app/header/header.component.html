@@ -1,0 +1,15 @@
+<div>
+    <div>
+        <h6>Property Binding</h6>
+        <img [src]="source" width="50" height="170">
+    </div>
+    <div>
+        <h6>String interpolation</h6>
+        {{slogan}}
+    </div>
+    <div class="alert alert-success"  [hidden]="displaynotification">
+        <p>
+        Property binding if displaynotification is true it will not disply</p>
+    </div>
+    <div class="close"><button class="btn" (click)="display()">Close</button></div>
+</div>

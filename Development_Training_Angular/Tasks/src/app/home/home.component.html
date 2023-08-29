@@ -1,0 +1,45 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>Concepts</mat-icon>
+    </button>
+    <span>My Library</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item><a routerLink="">Home</a>
+  <button mat-menu-item><a routerLink="letvar">Differences</a></button>
+  <button mat-menu-item><a routerLink="login">Login</a></button>
+  <button mat-menu-item><a routerLink="reverse">reverse</a></button>
+  <button mat-menu-item> <a routerLink="string">String Declaration</a></button>
+  <button mat-menu-item><a routerLink="studentRegistration">Student Registration</a></button>
+  <button mat-menu-item><a routerLink="stud">stud</a></button>
+  <button mat-menu-item><a routerLink="ngfor">ngFor</a></button>
+  <!--<button mat-menu-item><a routerLink="lychooks">Lifecyclehooks</a></button>-->
+ <button mat-menu-item><a routerLink="demo">LifyCyclehooks</a></button>
+  <button mat-menu-item><a routerLink="parentochild">parentTochild</a></button>
+  <button mat-menu-item><a routerLink="childtoparent">childtoparent</a></button>
+  <button mat-menu-item><a routerLink="studentparent">Parenttochildmodule</a></button>
+  <button mat-menu-item><a routerLink="teacherchild">ctp</a></button>
+  <button mat-menu-item routerLink="ptoc">ptoc</button>
+  <button mat-menu-item routerLink="products">Product Crud</button>
+  <button mat-menu-item routerLink="students">Student Crud</button>
+  <button mat-menu-item routerLink="viewc">Viewchild</button>
+  <button mat-menu-item routerLink="lifecycleparent">nglifecyclepractice</button>
+  <button mat-menu-item routerLink="basics">basics</button>
+  <button mat-menu-item routerLink="pipe">Pipes</button>
+  <button mat-menu-item routerLink="custompipe">custom pipe</button>
+  <button mat-menu-item routerLink="customdirective">custom directive</button>
+  <button mat-menu-item routerLink="content-projection">content-projection</button>
+  <button mat-menu-item routerLink="task">task</button>
+  <button mat-menu-item routerLink="leave">reactiveform</button>
+  <button mat-menu-item routerLink="reactiveform">reactiveform1</button>
+</button>
+</mat-menu>
+

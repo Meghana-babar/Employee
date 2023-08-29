@@ -1,0 +1,19 @@
+<div class="container">
+    <form [formGroup]="anyForm" (ngSubmit)="addshobby()">
+        <label>First Name</label>
+        <input type="text" placeholder="enter firstname" formControlName="firstname" ><br>
+        <label>
+            Last Name
+        </label>
+        <input type="text" placeholder="enter lastname" formControlName="lastname"><br>
+        <label>Email</label>
+        <input type="email" placeholder="enter email" formControlName="email"><br>
+        
+        <div formArrayName="hobbies">
+            <div *ngFor="let d of anyForm.get('hobbies')['control'];let i=index">
+              <input type="text" formControlName=i>
+            </div>
+            <button mat-raised-button color="primary">Add Hobby</button>
+        </div>
+    </form>
+</div>

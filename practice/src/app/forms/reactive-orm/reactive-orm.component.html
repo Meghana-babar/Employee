@@ -1,0 +1,17 @@
+<form [formGroup]="reactive">
+    <label>First Name</label>
+    <input type="text" formControlName="firstname"><br>
+    <label>Last Name</label>
+    <input type="text" formControlName="lastname"><br>
+    <label>Email</label>
+    <input type="email" formControlName="email"><br>
+    <label>Phone No</label>
+    <input type="number" formControlName="phone_no"><br>
+    <label>Department</label>
+<select formControlName="department">
+    <option>CS</option>
+    <option>IT</option>
+    <option>MECH</option>
+</select>
+<button type="submit">Submit</button>
+</form>

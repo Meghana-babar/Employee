@@ -1,0 +1,8 @@
+<div class="container">
+    <input type="text" #input>
+    <button (click)="onsubmit(input)">submit</button>
+    <app-demo [value]="inputtext" *ngIf="destroy">
+        <p>When ngaftercontentview this projected content ll initialised {{inputtext}}</p>
+    </app-demo>
+    <button (click)="destroycom()">destroy</button>
+</div>

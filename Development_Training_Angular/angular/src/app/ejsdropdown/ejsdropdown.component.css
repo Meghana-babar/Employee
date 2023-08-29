@@ -1,0 +1,79 @@
+.filter-container {
+    margin-bottom: 10px;
+  }
+  
+  .field-container {
+    width: 200px;
+    margin-top: 10px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: 200px;
+    padding: 5px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  .e-dropdown-popup {
+    left: 50% !important;
+    transform: translateX(-50%);
+    transform-origin: top;
+    
+  }
+  .filter-header {
+    text-align: center;
+  }
+  
+  .filter-container {
+    margin-bottom: 10px;
+  }
+  
+  .condition-dropdown,
+  .field-dropdown,
+  .existing-values-dropdown,
+  .value-input {
+    width: 250px;
+  }
+  
+  .filtered-employees {
+    margin-top: 20px;
+  }
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .employee-table th, .employee-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .employee-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .employee-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .employee-table tr:hover {
+    background-color: #e2e2e2;
+  }
+  
+  

@@ -1,0 +1,9 @@
+<div class="container">
+    <ng-content></ng-content>
+    <h2>Welcome to child component</h2>
+    <ng-content select=[multi]></ng-content>
+    <ng-template #ref>
+        <h1>welcome</h1>
+    </ng-template>
+    <ng-container [ngTemplateOutlet]="ref"></ng-container>
+</div>

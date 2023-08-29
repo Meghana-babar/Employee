@@ -1,0 +1,55 @@
+<form [formGroup]="empForm" (ngSubmit)="submit()">
+  <div class="container">
+    <h1>Employee</h1>
+    <hr>
+
+    <label for="email"><b>First Name</b></label>
+    <input type="text" placeholder="Enter Name" formControlName="firstname" id="fn">
+
+    <label for="psw"><b>Last Name</b></label>
+    <input type="text" placeholder="Enter Last Name" formControlName="lastname" id="ln">
+
+    <label for="psw-repeat"><b>Email</b></label>
+    <input type="password" placeholder="Enter Email" formControlName="email" id="email">
+    <hr>
+
+    <label for="dob"><b>Dob</b></label>
+    <input type="date" placeholder="Enter Dob" formControlName="dob" id="dob">
+    <hr>
+
+    <label><b>Gender:</b></label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label><br>
+
+    <label>Department</label>
+    <select>
+      <option>CS</option>
+      <option>IT</option>
+      <option>MECH</option>
+    </select>
+    <hr>
+
+    <div formArrayName="programminglanguage">
+      <div *ngFor="let pl of empForm.get('programminglanguage')['controls'];index as i">
+        <input type="text" placeholder="enter pl" [formControlName]=i>
+      </div>
+      <button (click)="addpl()">Add PL</button>
+    </div>
+
+    <!-- <div class="container"> -->
+      <div formGroupName="subForm">
+        <label><b>Employee Id</b></label>
+        <input type="number" formControlName="empid">
+        <hr>
+        <label><b>Address</b></label>
+        <input type="text" formControlName="address">
+      </div>
+    <!-- </div> -->
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+</form>

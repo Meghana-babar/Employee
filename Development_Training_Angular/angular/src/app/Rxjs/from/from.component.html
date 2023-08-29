@@ -1,0 +1,12 @@
+<!-- from.component.html -->
+
+<!-- <h2>Departments:</h2>
+<ul>
+  <li *ngFor="let d of dept | async">{{ d }}</li>
+</ul> -->
+<h2>Departments:</h2>
+<button (click)="onButtonClick()">Show Departments</button>
+
+<ul *ngIf="showDepartments">
+  <li *ngFor="let d of dept | async">{{ d }}</li>
+</ul>

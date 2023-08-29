@@ -1,0 +1,12 @@
+<div>
+    <div *ngFor="let c of fruits">
+      <div [ngStyle]="{color:c.name=='mango'?'Green' :'Red'}" *ngIf="c.name=='mango'">{{c.name}}</div>
+   </div>
+   
+  </div>
+  
+  <div *ngFor="let c of [1,2,3]">
+    <div>{{c}}</div>
+  </div>
+    
+  

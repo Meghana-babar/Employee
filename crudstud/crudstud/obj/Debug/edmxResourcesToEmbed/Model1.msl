@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+    <EntitySetMapping Name="studentdatas">
+      <EntityTypeMapping TypeName="masterModel.studentdata">
+        <MappingFragment StoreEntitySet="studentdata">
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

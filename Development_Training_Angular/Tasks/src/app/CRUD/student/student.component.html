@@ -1,0 +1,48 @@
+
+<div class="main-area">
+    <div class="content-area">
+        <div class="header">
+            <h1>Products</h1>
+            <hr>
+        </div>
+        <div class="container">
+            <!--add products-->
+            <div class="form-area">
+                <h3>create product</h3>
+                <form #myform="ngForm" (ngSubmit)="onsubmit(myform.value)">
+                    <label>name</label>
+                    <input type="text" name="sname" ngModel>
+                    <label>age</label>
+                    <input type="text" name="age" ngModel>
+                    <label>branch</label>
+                    <input type="text" name="branch" ngModel>
+
+                    <input type="submit" value="add student">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="product-display-area">
+    <h1>All Products</h1>
+    <table id="stud">
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>age</th>
+            <th>branch</th>
+        </tr>
+        <tr *ngFor="let p of allstudents;index as i">
+            <td>{{i+1}}</td>
+            <td>
+                {{p.name}}
+            </td>
+            <td>{{p.age}}</td>
+            <td>{{p.branch}}</td>
+            <td><button (click)="ondelete(p.name)">delete</button></td>
+        </tr>
+    </table>
+    <input type="submit" value="fetch product" (click)="fetchstud()">
+
+</div>

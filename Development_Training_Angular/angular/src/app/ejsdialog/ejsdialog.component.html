@@ -1,0 +1,21 @@
+<div  >
+    <ejs-dropdownlist [(ngModel)]="option1" [dataSource]="column" placeholder="select employee" [width]="'400px'" (ngModelChange)="change()">
+    </ejs-dropdownlist>
+</div>
+<div *ngIf="option1">
+<ejs-dropdownlist [dataSource]="condition" [(ngModel)]="option2" placeholder="select condition" [width]="'300px'">
+</ejs-dropdownlist>
+</div>
+<div *ngIf="option2">
+    <div *ngIf="isEmployee">
+<ejs-dropdownlist [dataSource]="Employee" placeholder="select employee" [width]="'300px'">
+
+</ejs-dropdownlist>
+    </div>
+    <div *ngIf="isDesignation">
+        <ejs-dropdownlist [dataSource]="Designation" placeholder="select Designation" [width]="'300px'">
+
+        </ejs-dropdownlist>
+
+    </div>
+</div>

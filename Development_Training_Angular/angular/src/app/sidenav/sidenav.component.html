@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button tittle="toggle" (click)="nav.toggle()"><mat-icon>menu</mat-icon></button>
+  <nav>
+    <h1 class="app-title">Angular Demo</h1>
+  </nav>
+</mat-toolbar>
+<mat-sidenav-container class="side-container">
+  <mat-sidenav mode="side" opened #nav>
+    <mat-nav-list>
+      <a mat-list-item routerLink="login">Login</a>
+      <a mat-list-item routerLink="/ptc">Parent To Child</a>
+      <a mat-list-item routerLink="/ctp">Child To Parent</a>
+      <a mat-list-item routerLink="inbuilt">Inbuilt Pipe</a>
+      <a mat-list-item routerLink="cpipe">Custom pipes</a>
+      <a mat-list-item routerLink="ngfor">Directive-ngFor</a>
+      <a mat-list-item routerLink="letvar">Diff let and var</a>
+      <a mat-list-item routerLink="/observable">Observable</a>
+      <a mat-list-item routerLink="/dynamiccomponent">Dynamic Component</a>
+      <a mat-list-item routerLink="/standalone">Standalone Component</a>
+      <a mat-list-item (click)="activate()">activate ptoc</a>
+      <a mat-list-item routerLink="cand">Candeactivate</a>
+      <a mat-list-item routerLink="empform">CRUD</a>
+      <a mat-list-item routerLink="subForm">SubForm</a>
+      <a mat-list-item routerLink="ve">View Encapsulation</a>
+      <a mat-list-item routerLink="cr">cr</a>
+      <a mat-list-item routerLink="pie">piechart</a>
+      <a mat-list-item routerLink="of">Rxjs/Of</a>
+      <a mat-list-item routerLink="from">Rxjs/from</a>
+      <a mat-list-item routerLink="subject">Subject</a>
+      <a mat-list-item routerLink="api">Api</a>
+      <a mat-list-item routerLink="sint">String Interpolation</a>
+      <a mat-list-item routerLink="dem">dem</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

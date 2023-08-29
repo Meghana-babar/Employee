@@ -1,0 +1,48 @@
+
+<div class="main-area">
+    <div class="content-area">
+        <div class="header">
+            <h1>Products</h1>
+            <hr>
+        </div>
+        <div class="container">
+            <!--add products-->
+            <div class="form-area">
+                <h3>create product</h3>
+                <form #myform="ngForm" (ngSubmit)="onsubmit(myform.value)">
+                    <label>name</label>
+                    <input type="text" name="pname" ngModel>
+                    <label>product description</label>
+                    <input type="text" name="desc" ngModel>
+                    <label>price</label>
+                    <input type="text" name="price" ngModel>
+
+                    <input type="submit" value="add product">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="product-display-area">
+    <h1>All Products</h1>
+    <table id="products">
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>desc</th>
+            <th>price</th>
+        </tr>
+        <tr *ngFor="let p of allproducts;index as i">
+            <td>{{i+1}}</td>
+            <td>
+                {{p.pname}}
+            </td>
+            <td>{{p.desc}}</td>
+            <td>{{p.price}}</td>
+            <td><button (click)="ondelete(p.id)">delete</button></td>
+        </tr>
+    </table>
+    <input type="submit" value="fetch product" (click)="fetchprod()">
+
+</div>
